@@ -1,43 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Global SP Solutions - Transform Opportunities Into Revenue</title>
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Global SP Solutions — Expert business development and consulting that transforms government and corporate procurement opportunities into revenue.">
+<title>Global SP Solutions — Transform Opportunity Into Revenue</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="container">
-            <div class="nav-brand">
-                <img src="images/logo.png" alt="GSPS Logo" class="logo">
-                <span class="brand-name">GSPS</span>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="experiences.html">Experiences</a></li>
-                <li><a href="solution.html">Solution</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
 
-    <section class="hero">
-        <div class="hero-overlay"></div>
-        <div class="container hero-content">
-            <h1 class="hero-title">Transform Government and Corporate Opportunities Into Revenue</h1>
-            <p class="hero-subtitle">Expert business development and consulting services that connect you to procurement opportunities and accelerate growth</p>
-            <a href="contact.html" class="cta-button">Schedule Your Strategy Session</a>
-        </div>
-    </section>
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+<canvas id="particle-canvas"></canvas>
+<div class="grid-overlay"></div>
+<div class="scanline"></div>
 
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Global SP Solutions. All rights reserved.</p>
-        </div>
-    </footer>
+<div class="page">
 
-    <script src="script.js"></script>
+  <nav>
+    <a href="index.html" class="logo">
+      <div class="logo-dot"></div>
+      GSPS
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="experiences.html">Experiences</a></li>
+      <li><a href="solution.html">Solution</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section style="min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:80px 64px;position:relative;overflow:hidden;">
+
+    <!-- Hero radial glow backdrop -->
+    <div style="position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 55% 65% at 50% 38%, rgba(255,255,255,0.035) 0%, rgba(155,77,255,0.06) 30%, transparent 70%);z-index:0;"></div>
+
+    <!-- HERO LOGO — actual logo image, white-converted with glow -->
+    <div style="position:relative;z-index:1;opacity:0;animation:fadeUp .8s .05s forwards;margin-bottom:48px;">
+      <img
+        src="images/logo.png"
+        alt="Global Summit Place Solutions — There is a solution for every problem."
+        style="
+          display: block;
+          width: min(580px, 78vw);
+          height: auto;
+          /* Use screen blend mode to drop white background on dark hero */
+          mix-blend-mode: screen;
+          filter:
+            drop-shadow(0 0 14px rgba(255,255,255,0.5))
+            drop-shadow(0 0 36px rgba(255,255,255,0.3))
+            drop-shadow(0 0 72px rgba(220,200,255,0.2));
+        "
+      />
+    </div>
+
+    <!-- Eyebrow + headline + body — below the logo -->
+    <div style="position:relative;z-index:1;">
+      <div class="page-eyebrow" style="animation-name:fadeUp;animation-delay:.3s;">Government &amp; Corporate Consulting</div>
+      <h1 style="font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(44px,5.8vw,92px);line-height:.93;letter-spacing:-.03em;max-width:860px;opacity:0;animation:fadeUp .9s .45s forwards;">
+        <span style="display:block;color:var(--text);">Transform</span>
+        <span style="display:block;color:transparent;-webkit-text-stroke:1px rgba(155,77,255,0.6);">Opportunity</span>
+        <span style="display:block;background:linear-gradient(90deg,var(--c2) 0%,var(--c1) 40%,var(--c3) 70%,var(--c2) 100%);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:gradShift 4s linear infinite,fadeUp .9s .65s both;">Into Revenue</span>
+      </h1>
+      <p style="font-family:'Lora',serif;font-style:italic;font-size:19px;line-height:1.8;color:rgba(245,240,255,0.68);max-width:540px;margin:32px 0 52px;opacity:0;animation:fadeUp .8s .85s forwards;">
+        Expert business development that connects you to procurement opportunities and accelerates growth in government and corporate markets.
+      </p>
+      <div style="display:flex;gap:20px;flex-wrap:wrap;opacity:0;animation:fadeUp .8s 1.05s forwards;">
+        <a href="contact.html" class="btn btn-primary"><span>Schedule Strategy Session</span></a>
+        <a href="services.html" class="btn btn-secondary"><span>View Our Services</span></a>
+        <a href="solution.html" class="btn btn-ghost"><span>Learn More</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats-row reveal" style="margin:0 64px;">
+    <div class="stat-item">
+      <div class="stat-num">$2.4B+</div>
+      <div class="stat-label">Contracts Influenced</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">20+</div>
+      <div class="stat-label">Years of Experience</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">180+</div>
+      <div class="stat-label">Clients Served</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">12+</div>
+      <div class="stat-label">Industry Sectors</div>
+    </div>
+  </div>
+
+  <!-- SERVICES PREVIEW -->
+  <section class="section">
+    <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:48px;">
+      <div class="section-label">Core Services</div>
+      <div class="section-title" style="margin-bottom:0;">What We Do</div>
+    </div>
+    <div class="card-grid">
+      <div class="card reveal">
+        <div class="card-num">01</div>
+        <div class="card-title">Procurement Strategy</div>
+        <div class="card-body">Navigate complex federal and state acquisition processes with expert guidance from identification through award.</div>
+        <a href="services.html" class="btn btn-ghost" style="margin-top:28px;padding:10px 20px;font-size:11px;"><span>Explore →</span></a>
+      </div>
+      <div class="card reveal">
+        <div class="card-num">02</div>
+        <div class="card-title">Business Development</div>
+        <div class="card-body">Build institutional relationships that translate into long-term, high-value government and corporate contracts.</div>
+        <a href="services.html" class="btn btn-ghost" style="margin-top:28px;padding:10px 20px;font-size:11px;"><span>Explore →</span></a>
+      </div>
+      <div class="card reveal">
+        <div class="card-num">03</div>
+        <div class="card-title">Market Intelligence</div>
+        <div class="card-body">Spot and qualify opportunities before competitors know they exist — turning intelligence into competitive advantage.</div>
+        <a href="services.html" class="btn btn-ghost" style="margin-top:28px;padding:10px 20px;font-size:11px;"><span>Explore →</span></a>
+      </div>
+      <div class="card reveal">
+        <div class="card-num">04</div>
+        <div class="card-title">Proposal Support</div>
+        <div class="card-body">Craft compelling, compliant proposals backed by deep institutional knowledge that stand out at every evaluation stage.</div>
+        <a href="services.html" class="btn btn-ghost" style="margin-top:28px;padding:10px 20px;font-size:11px;"><span>Explore →</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-strip reveal">
+    <h2>Ready to Win<br>
+      <span style="background:linear-gradient(90deg,var(--c2),var(--c1),var(--c3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;">More Contracts?</span>
+    </h2>
+    <p>Schedule a complimentary 45-minute strategy session. No obligation — just clarity on your path to revenue.</p>
+    <div class="btn-row">
+      <a href="contact.html" class="btn btn-primary"><span>Schedule Your Session</span></a>
+      <a href="solution.html" class="btn btn-secondary"><span>Our Approach</span></a>
+    </div>
+  </div>
+
+  <footer>
+    <a href="index.html" class="footer-brand">Global SP Solutions</a>
+    <span>© 2026 GSPS. All rights reserved.</span>
+    <span>globalsolutionssp.com</span>
+  </footer>
+
+</div>
+<script src="main.js"></script>
 </body>
 </html>

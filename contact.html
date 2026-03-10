@@ -1,73 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - Global SP Solutions</title>
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Contact Global SP Solutions — Schedule a strategy session with Calvin Toone and start transforming your procurement opportunities into revenue.">
+<title>Contact — Global SP Solutions</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  /* Page-specific contact styles */
+  .contact-layout {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start;
+  }
+  .submit-note {
+    font-size: 12px; color: var(--muted); margin-top: 16px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .submit-note::before { content:''; width:6px; height:6px; background:var(--c3); border-radius:50%; flex-shrink:0; }
+
+  @media (max-width: 900px) {
+    .contact-layout { grid-template-columns: 1fr; }
+  }
+</style>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="container">
-            <div class="nav-brand">
-                <img src="images/logo.png" alt="GSPS Logo" class="logo">
-                <span class="brand-name">GSPS</span>
+
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+<canvas id="particle-canvas"></canvas>
+<div class="grid-overlay"></div>
+<div class="scanline"></div>
+
+<div class="page">
+
+  <nav>
+    <a href="index.html" class="logo">
+      <div class="logo-dot"></div>
+      GSPS
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="experiences.html">Experiences</a></li>
+      <li><a href="solution.html">Solution</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="page-eyebrow">Get In Touch</div>
+    <h1>Let's <span class="grad">Talk</span></h1>
+    <p class="lead">Ready to unlock new revenue opportunities? Let's discuss how Global SP Solutions can help your business grow through strategic procurement.</p>
+  </div>
+
+  <!-- CONTACT SECTION -->
+  <section class="section">
+    <div class="contact-layout">
+
+      <!-- LEFT: FORM -->
+      <div>
+        <div class="section-label">Send a Message</div>
+        <form
+          action="mailto:caltoone@gmail.com"
+          method="get"
+          enctype="text/plain"
+          onsubmit="return handleForm(event)"
+        >
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="fname">First Name</label>
+              <input type="text" id="fname" name="fname" placeholder="Jane" required>
             </div>
-            <ul class="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="experiences.html">Experiences</a></li>
-                <li><a href="solution.html">Solution</a></li>
-                <li><a href="contact.html" class="active">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <section class="page-header">
-        <div class="container">
-            <h1>Contact</h1>
-        </div>
-    </section>
-
-    <section class="contact-section">
-        <div class="container">
-            <div class="contact-content">
-                <div class="contact-image">
-                    <img src="images/contact-phone.jpg" alt="Contact Us">
-                </div>
-                
-                <div class="contact-info">
-                    <h2>Get in Touch</h2>
-                    <p class="contact-intro">Ready to unlock new revenue opportunities? Let's discuss how Global SP Solutions can help your business grow.</p>
-                    
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <div class="contact-label">Name</div>
-                            <div class="contact-value">Calvin Toone</div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-label">Email</div>
-                            <div class="contact-value">
-                                <a href="mailto:caltoone@gmail.com">caltoone@gmail.com</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="cta-section">
-                        <a href="mailto:caltoone@gmail.com" class="cta-button">Send an Email</a>
-                        <p class="cta-note">We typically respond within 24 hours</p>
-                    </div>
-                </div>
+            <div class="form-group">
+              <label for="lname">Last Name</label>
+              <input type="text" id="lname" name="lname" placeholder="Smith" required>
             </div>
-        </div>
-    </section>
+            <div class="form-group full">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="jane@company.com" required>
+            </div>
+            <div class="form-group full">
+              <label for="company">Company / Organization</label>
+              <input type="text" id="company" name="company" placeholder="Your company name">
+            </div>
+            <div class="form-group full">
+              <label for="interest">Area of Interest</label>
+              <select id="interest" name="interest">
+                <option value="" disabled selected>Select a service area...</option>
+                <option value="procurement">Procurement Strategy</option>
+                <option value="bizdev">Business Development</option>
+                <option value="intelligence">Market Intelligence</option>
+                <option value="proposal">Proposal Support</option>
+                <option value="capital">Capital &amp; Loan Structuring</option>
+                <option value="general">General Inquiry</option>
+              </select>
+            </div>
+            <div class="form-group full">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Tell us about your business and what opportunities you're looking to pursue..."></textarea>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary" style="margin-top:28px;border:none;">
+            <span>Send Message</span>
+          </button>
+          <p class="submit-note">We typically respond within 24 hours.</p>
+        </form>
+      </div>
 
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Global SP Solutions. All rights reserved.</p>
+      <!-- RIGHT: CONTACT INFO -->
+      <div>
+        <div class="section-label">Direct Contact</div>
+        <div class="contact-cards">
+          <div class="contact-card reveal">
+            <div class="contact-icon">👤</div>
+            <div>
+              <div class="contact-label">Your Point of Contact</div>
+              <div class="contact-value">Calvin Toone</div>
+            </div>
+          </div>
+          <div class="contact-card reveal">
+            <div class="contact-icon">✉</div>
+            <div>
+              <div class="contact-label">Email</div>
+              <div class="contact-value">
+                <a href="mailto:caltoone@gmail.com">caltoone@gmail.com</a>
+              </div>
+            </div>
+          </div>
+          <div class="contact-card reveal">
+            <div class="contact-icon">⏱</div>
+            <div>
+              <div class="contact-label">Response Time</div>
+              <div class="contact-value">Within 24 hours</div>
+            </div>
+          </div>
+          <div class="contact-card reveal">
+            <div class="contact-icon">📅</div>
+            <div>
+              <div class="contact-label">Free Consultation</div>
+              <div class="contact-value">45-minute strategy session — no obligation</div>
+            </div>
+          </div>
         </div>
-    </footer>
 
-    <script src="script.js"></script>
+        <!-- WHAT TO EXPECT -->
+        <div style="margin-top:48px;">
+          <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:18px;color:var(--text);margin-bottom:20px;">What to Expect</div>
+          <ul class="bullet-list">
+            <li class="reveal">A brief discovery call to understand your business and goals</li>
+            <li class="reveal">An honest assessment of the opportunities available to you</li>
+            <li class="reveal">A clear outline of how GSPS can support your growth</li>
+            <li class="reveal">Next steps — no pressure, no obligation</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- BOTTOM CTA -->
+  <div class="cta-strip reveal">
+    <h2>Don't Wait on<br>
+      <span style="background:linear-gradient(90deg,var(--c2),var(--c1),var(--c3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Your Next Win</span>
+    </h2>
+    <p>Every procurement cycle has deadlines. The sooner we connect, the sooner we can put you in position to compete.</p>
+    <div class="btn-row">
+      <a href="mailto:caltoone@gmail.com" class="btn btn-primary"><span>Email Us Directly</span></a>
+      <a href="services.html" class="btn btn-secondary"><span>Explore Services</span></a>
+    </div>
+  </div>
+
+  <footer>
+    <a href="index.html" class="footer-brand">Global SP Solutions</a>
+    <span>© 2026 GSPS. All rights reserved.</span>
+    <span>globalsolutionssp.com</span>
+  </footer>
+
+</div>
+
+<script src="main.js"></script>
+<script>
+  function handleForm(e) {
+    e.preventDefault();
+    var fname    = document.getElementById('fname').value;
+    var lname    = document.getElementById('lname').value;
+    var email    = document.getElementById('email').value;
+    var company  = document.getElementById('company').value;
+    var interest = document.getElementById('interest').value;
+    var message  = document.getElementById('message').value;
+    var body = 'Name: ' + fname + ' ' + lname +
+               '\nEmail: ' + email +
+               '\nCompany: ' + company +
+               '\nInterest: ' + interest +
+               '\n\nMessage:\n' + message;
+    window.location.href = 'mailto:caltoone@gmail.com'
+      + '?subject=GSPS Inquiry – ' + encodeURIComponent(fname + ' ' + lname)
+      + '&body=' + encodeURIComponent(body);
+    return false;
+  }
+</script>
 </body>
 </html>

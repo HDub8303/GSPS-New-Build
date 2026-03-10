@@ -1,86 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Solution - Global SP Solutions</title>
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Global SP Solutions — Your partner in government and corporate procurement. Identify, capture, and win contracts that drive real revenue growth.">
+<title>Solution — Global SP Solutions</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="container">
-            <div class="nav-brand">
-                <img src="images/logo.png" alt="GSPS Logo" class="logo">
-                <span class="brand-name">GSPS</span>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="experiences.html">Experiences</a></li>
-                <li><a href="solution.html" class="active">Solution</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
 
-    <section class="page-header">
-        <div class="container">
-            <h1>Solution</h1>
-        </div>
-    </section>
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+<canvas id="particle-canvas"></canvas>
+<div class="grid-overlay"></div>
+<div class="scanline"></div>
 
-    <section class="content-section">
-        <div class="container">
-            <div class="section-image-small">
-                <img src="images/solution-partnership.jpg" alt="Partnership">
-            </div>
-            
-            <h2 class="section-title">Your Partner in Procurement</h2>
-            <p class="section-intro">Global SP Solutions specializes in unlocking revenue streams through strategic business development. We help you:</p>
-            
-            <div class="solution-list">
-                <div class="solution-item">
-                    <span class="bullet">•</span>
-                    <span><strong>Identify and Capture</strong> government procurement opportunities</span>
-                </div>
-                <div class="solution-item">
-                    <span class="bullet">•</span>
-                    <span><strong>Register and Manage</strong> corporate platform accounts with major organizations</span>
-                </div>
-                <div class="solution-item">
-                    <span class="bullet">•</span>
-                    <span><strong>Develop Winning</strong> sales strategies tailored to your industry</span>
-                </div>
-                <div class="solution-item">
-                    <span class="bullet">•</span>
-                    <span><strong>Structure</strong> capital injection and loan opportunities for growth</span>
-                </div>
-                <div class="solution-item">
-                    <span class="bullet">•</span>
-                    <span><strong>Navigate</strong> complex procurement processes with confidence</span>
-                </div>
-            </div>
-        </div>
-    </section>
+<div class="page">
 
-    <section class="content-section alt-bg">
-        <div class="container">
-            <h2 class="section-title">Problem/Opportunity</h2>
-            <h3 class="section-subtitle-large">Are You Missing Out on Millions in Government and Corporate Contracts?</h3>
-            <p class="section-text">Navigating government procurement and corporate platform registration can be complex and overwhelming. Without the right strategy and expertise, businesses leave significant opportunities on the table.</p>
-            
-            <div class="cta-center">
-                <a href="contact.html" class="cta-button">Let's Talk About Your Opportunities</a>
-            </div>
-        </div>
-    </section>
+  <nav>
+    <a href="index.html" class="logo">
+      <div class="logo-dot"></div>
+      GSPS
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="experiences.html">Experiences</a></li>
+      <li><a href="solution.html">Solution</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
 
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Global SP Solutions. All rights reserved.</p>
-        </div>
-    </footer>
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="page-eyebrow">Our Approach</div>
+    <h1>Your Partner in<br><span class="grad">Procurement</span></h1>
+    <p class="lead">Global SP Solutions specializes in unlocking revenue streams through strategic business development — turning complex procurement ecosystems into consistent growth engines.</p>
+  </div>
 
-    <script src="script.js"></script>
+  <!-- WHAT WE DO -->
+  <section class="section">
+    <div class="section-label">What We Do</div>
+    <div class="section-title">Our Solution at a Glance</div>
+    <ul class="bullet-list" style="margin-top:36px;">
+      <li class="reveal"><strong>Identify and Capture</strong> government procurement opportunities across federal, state, and local markets</li>
+      <li class="reveal"><strong>Register and Manage</strong> corporate platform accounts with major organizations so you're positioned to be found and selected</li>
+      <li class="reveal"><strong>Develop Winning</strong> sales strategies tailored to your specific industry, capabilities, and target buyers</li>
+      <li class="reveal"><strong>Structure</strong> capital injection and loan opportunities to fund growth alongside contract wins</li>
+      <li class="reveal"><strong>Navigate</strong> complex procurement processes with confidence — from registration to award to delivery</li>
+    </ul>
+  </section>
+
+  <!-- THE PROBLEM -->
+  <section class="section">
+    <div class="highlight-box reveal">
+      <div style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--c2);margin-bottom:20px;display:flex;align-items:center;gap:12px;">
+        <span style="display:block;width:20px;height:1px;background:var(--c2);"></span>
+        The Problem
+      </div>
+      <h2>Are You Missing Out on Millions in Government and Corporate Contracts?</h2>
+      <p>Navigating government procurement and corporate platform registration can be complex and overwhelming. Without the right strategy and expertise, businesses leave significant opportunities on the table — often without realizing how close they are to winning.</p>
+      <a href="contact.html" class="btn btn-primary"><span>Let's Talk About Your Opportunities</span></a>
+    </div>
+  </section>
+
+  <!-- HOW WE SOLVE IT -->
+  <section class="section">
+    <div class="section-label">The Solution</div>
+    <div class="section-title">How GSPS Closes the Gap</div>
+    <div class="card-grid" style="margin-top:0;">
+      <div class="card reveal">
+        <div class="card-num">→</div>
+        <div class="card-title">Strategic Positioning</div>
+        <div class="card-body">We analyze where your business fits in the procurement landscape and build a targeted strategy to maximize visibility and competitiveness with the right buyers.</div>
+      </div>
+      <div class="card reveal">
+        <div class="card-num">→</div>
+        <div class="card-title">Opportunity Pipeline</div>
+        <div class="card-body">We continuously monitor and surface the right contracts and RFPs — so you're never chasing opportunities too late or wasting resources on the wrong ones.</div>
+      </div>
+      <div class="card reveal">
+        <div class="card-num">→</div>
+        <div class="card-title">Bid &amp; Proposal Excellence</div>
+        <div class="card-body">We craft compelling, fully compliant proposals that speak directly to evaluator priorities — backed by 20 years of understanding what actually wins contracts.</div>
+      </div>
+      <div class="card reveal">
+        <div class="card-num">→</div>
+        <div class="card-title">Capital &amp; Growth Structure</div>
+        <div class="card-body">Winning contracts is only half the equation. We help you secure the capital structure to fulfill them, scale your team, and invest in sustainable long-term growth.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOTTOM CTA -->
+  <div class="cta-strip reveal">
+    <h2>The Opportunity<br>
+      <span style="background:linear-gradient(90deg,var(--c2),var(--c1),var(--c3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Is Already There</span>
+    </h2>
+    <p>You just need the right partner to help you capture it. Let's start with a conversation.</p>
+    <div class="btn-row">
+      <a href="contact.html" class="btn btn-primary"><span>Schedule Your Session</span></a>
+      <a href="experiences.html" class="btn btn-secondary"><span>Our Track Record</span></a>
+    </div>
+  </div>
+
+  <footer>
+    <a href="index.html" class="footer-brand">Global SP Solutions</a>
+    <span>© 2026 GSPS. All rights reserved.</span>
+    <span>globalsolutionssp.com</span>
+  </footer>
+
+</div>
+<script src="main.js"></script>
 </body>
 </html>
