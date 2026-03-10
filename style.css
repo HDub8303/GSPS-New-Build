@@ -444,22 +444,120 @@ footer {
 }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 
-/* ── RESPONSIVE ── */
+/* ── HAMBURGER MENU ── */
+.nav-toggle {
+  display: none;
+  flex-direction: column; justify-content: center; gap: 5px;
+  width: 40px; height: 40px; cursor: pointer;
+  background: transparent; border: none; padding: 4px;
+  z-index: 100;
+}
+.nav-toggle span {
+  display: block; width: 24px; height: 2px;
+  background: var(--text); border-radius: 2px;
+  transition: transform .3s, opacity .3s, width .3s;
+  transform-origin: center;
+}
+.nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle.open span:nth-child(2) { opacity: 0; width: 0; }
+.nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* Mobile nav drawer */
+.nav-links.open {
+  display: flex !important;
+  position: fixed; inset: 0; top: 0;
+  flex-direction: column; justify-content: center; align-items: center;
+  gap: 36px; background: rgba(12,8,20,0.97);
+  backdrop-filter: blur(16px); z-index: 90;
+  animation: fadeIn .2s ease;
+}
+.nav-links.open a { font-size: 20px; letter-spacing: .12em; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+/* ── RESPONSIVE — TABLET ── */
 @media (max-width: 900px) {
   nav { padding: 20px 28px; }
   .nav-links { gap: 24px; }
-  .page-hero, .section, .cta-strip { padding-left: 28px; padding-right: 28px; }
-  .cta-strip { margin-left: 28px; margin-right: 28px; padding: 48px 32px; }
-  .stats-row { flex-direction: column; }
+  .page-hero { padding: 60px 28px 48px; }
+  .section { padding: 60px 28px; }
+  .highlight-box { padding: 36px 28px; }
+  .cta-strip { margin: 0 28px 60px; padding: 48px 32px; }
+  .stats-row { flex-direction: column; margin: 0 28px; }
   .stat-item { border-right: none; border-bottom: 1px solid var(--border); }
-  .two-col { grid-template-columns: 1fr; }
+  .two-col { grid-template-columns: 1fr; gap: 40px; }
+  .two-col.reverse { direction: ltr; }
   .form-grid { grid-template-columns: 1fr; }
   .card-grid { grid-template-columns: 1fr 1fr; }
+  .step { gap: 20px; }
+  .step-num { font-size: 40px; min-width: 44px; }
 }
+
+/* ── RESPONSIVE — MOBILE ── */
 @media (max-width: 600px) {
+  /* Nav */
+  nav { padding: 16px 20px; }
+  .nav-toggle { display: flex; }
   .nav-links { display: none; }
+
+  /* Hero */
+  .hero-section {
+    padding: 100px 20px 60px !important;
+    min-height: 100svh !important;
+  }
+  .hero-logo-wrap { margin-bottom: 32px !important; }
+  .hero-btns {
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+  .hero-btns .btn { width: 100%; justify-content: center; text-align: center; }
+
+  /* Page hero */
+  .page-hero { padding: 72px 20px 40px; }
+  .page-hero h1 { font-size: clamp(32px, 10vw, 52px); }
+
+  /* Sections */
+  .section { padding: 48px 20px; }
+  .section-title { font-size: clamp(22px, 7vw, 32px); }
+
+  /* Cards */
   .card-grid { grid-template-columns: 1fr; }
-  footer { flex-direction: column; gap: 12px; text-align: center; }
-  /* Hero section mobile padding */
-  section[style*="min-height:100vh"] { padding-left: 28px !important; padding-right: 28px !important; }
+  .card { padding: 28px 20px; }
+
+  /* Stats */
+  .stats-row { margin: 0 20px; }
+  .stat-num { font-size: 36px; }
+  .stat-item { padding: 24px 20px; }
+
+  /* Highlight box */
+  .highlight-box { padding: 28px 20px; }
+  .highlight-box h2 { font-size: clamp(20px, 7vw, 30px); }
+
+  /* CTA strip */
+  .cta-strip { margin: 0 0 0; padding: 48px 20px; }
+  .cta-strip h2 { font-size: clamp(24px, 8vw, 36px); }
+  .cta-strip .btn-row { flex-direction: column; align-items: stretch; gap: 12px; }
+  .cta-strip .btn-row .btn { justify-content: center; }
+
+  /* Steps */
+  .step { gap: 16px; padding: 24px 0; }
+  .step-num { font-size: 34px; min-width: 36px; }
+  .step-title { font-size: 17px; }
+
+  /* Checklist */
+  .checklist li { padding: 16px; font-size: 14px; }
+
+  /* Contact */
+  .contact-layout { grid-template-columns: 1fr; gap: 40px; }
+  .contact-card { padding: 20px 16px; }
+
+  /* Buttons — full tap targets */
+  .btn { padding: 16px 28px; cursor: pointer; }
+
+  /* Footer */
+  footer { flex-direction: column; gap: 10px; text-align: center; padding: 28px 20px; }
+
+  /* Disable heavy effects on mobile */
+  #cursor, #cursor-ring { display: none; }
+  body { cursor: auto; }
+  .btn { cursor: pointer; }
 }

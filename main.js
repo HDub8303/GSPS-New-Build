@@ -6,23 +6,46 @@
 (function () {
   'use strict';
 
-  // ── CURSOR ──────────────────────────────
-  const cursor = document.getElementById('cursor');
-  const ring   = document.getElementById('cursor-ring');
-  let mx = 0, my = 0, rx = 0, ry = 0;
-
-  document.addEventListener('mousemove', e => {
-    mx = e.clientX; my = e.clientY;
-    if (cursor) { cursor.style.left = mx + 'px'; cursor.style.top = my + 'px'; }
-  });
-
-  function animRing() {
-    rx += (mx - rx) * 0.12;
-    ry += (my - ry) * 0.12;
-    if (ring) { ring.style.left = rx + 'px'; ring.style.top = ry + 'px'; }
-    requestAnimationFrame(animRing);
+  // ── HAMBURGER MENU ──────────────────────
+  var toggle = document.getElementById('nav-toggle');
+  var navLinks = document.getElementById('nav-links');
+  if (toggle && navLinks) {
+    toggle.addEventListener('click', function () {
+      var open = navLinks.classList.toggle('open');
+      toggle.classList.toggle('open', open);
+      document.body.style.overflow = open ? 'hidden' : '';
+    });
+    // Close on link click
+    navLinks.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        navLinks.classList.remove('open');
+        toggle.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
   }
-  animRing();
+
+  var isMobile = window.innerWidth <= 600;
+
+  // ── CURSOR (desktop only) ───────────────
+  if (!isMobile) {
+    const cursor = document.getElementById('cursor');
+    const ring   = document.getElementById('cursor-ring');
+    let mx = 0, my = 0, rx = 0, ry = 0;
+
+    document.addEventListener('mousemove', e => {
+      mx = e.clientX; my = e.clientY;
+      if (cursor) { cursor.style.left = mx + 'px'; cursor.style.top = my + 'px'; }
+    });
+
+    function animRing() {
+      rx += (mx - rx) * 0.12;
+      ry += (my - ry) * 0.12;
+      if (ring) { ring.style.left = rx + 'px'; ring.style.top = ry + 'px'; }
+      requestAnimationFrame(animRing);
+    }
+    animRing();
+  }
 
   // ── PARTICLES ───────────────────────────
   const canvas = document.getElementById('particle-canvas');
@@ -31,7 +54,8 @@
   let W, H;
   const mouse = { x: -9999, y: -9999 };
   const COLORS = ['#9b4dff', '#c97dff', '#f0c040', '#d4a017', '#7a28cc', '#e8b030'];
-  const N = 110;
+  // Reduce particles significantly on mobile to save battery/CPU
+  const N = isMobile ? 30 : 110;
 
   function resize() {
     W = canvas.width  = window.innerWidth;
@@ -39,7 +63,9 @@
   }
   resize();
   window.addEventListener('resize', resize);
-  document.addEventListener('mousemove', e => { mouse.x = e.clientX; mouse.y = e.clientY; });
+  if (!isMobile) {
+    document.addEventListener('mousemove', e => { mouse.x = e.clientX; mouse.y = e.clientY; });
+  }
 
   function Particle() { this.reset(true); }
   Particle.prototype.reset = function (init) {
@@ -60,12 +86,14 @@
   Particle.prototype.update = function () {
     this.life++;
     if (this.life > this.maxLife) { this.reset(false); return; }
-    var dx = this.x - mouse.x, dy = this.y - mouse.y;
-    var dist = Math.sqrt(dx * dx + dy * dy);
-    if (dist < 120) {
-      var f = (120 - dist) / 120 * 0.8;
-      this.vx += (dx / dist) * f;
-      this.vy += (dy / dist) * f;
+    if (!isMobile) {
+      var dx = this.x - mouse.x, dy = this.y - mouse.y;
+      var dist = Math.sqrt(dx * dx + dy * dy);
+      if (dist < 120) {
+        var f = (120 - dist) / 120 * 0.8;
+        this.vx += (dx / dist) * f;
+        this.vy += (dy / dist) * f;
+      }
     }
     this.vx *= 0.98; this.vy *= 0.98;
     this.x  += this.vx; this.y += this.vy;
@@ -90,6 +118,7 @@
   for (var i = 0; i < N; i++) particles.push(new Particle());
 
   function drawLines() {
+    if (isMobile) return; // skip connecting lines on mobile
     for (var i = 0; i < particles.length; i++) {
       for (var j = i + 1; j < particles.length; j++) {
         var dx = particles[i].x - particles[j].x;
