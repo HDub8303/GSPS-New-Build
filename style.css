@@ -450,13 +450,17 @@ footer {
   flex-direction: column; justify-content: center; gap: 5px;
   width: 40px; height: 40px; cursor: pointer;
   background: transparent; border: none; padding: 4px;
-  z-index: 100;
+  position: relative; z-index: 1; /* within nav stacking context normally */
 }
 .nav-toggle span {
   display: block; width: 24px; height: 2px;
   background: var(--text); border-radius: 2px;
   transition: transform .3s, opacity .3s, width .3s;
   transform-origin: center;
+}
+.nav-toggle.open {
+  /* Escape nav's stacking context by going fixed, above the drawer */
+  position: fixed; top: 16px; right: 20px; z-index: 200;
 }
 .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 .nav-toggle.open span:nth-child(2) { opacity: 0; width: 0; }
@@ -465,10 +469,10 @@ footer {
 /* Mobile nav drawer */
 .nav-links.open {
   display: flex !important;
-  position: fixed; inset: 0; top: 0;
+  position: fixed; inset: 0;
   flex-direction: column; justify-content: center; align-items: center;
   gap: 36px; background: rgba(12,8,20,0.97);
-  backdrop-filter: blur(16px); z-index: 90;
+  backdrop-filter: blur(16px); z-index: 150; /* beats nav z-index:50 at root level */
   animation: fadeIn .2s ease;
 }
 .nav-links.open a { font-size: 20px; letter-spacing: .12em; }
