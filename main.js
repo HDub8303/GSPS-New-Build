@@ -8,20 +8,50 @@
 
   // ── HAMBURGER MENU ──────────────────────
   var toggle = document.getElementById('nav-toggle');
-  var navLinks = document.getElementById('nav-links');
-  if (toggle && navLinks) {
-    toggle.addEventListener('click', function () {
-      var open = navLinks.classList.toggle('open');
-      toggle.classList.toggle('open', open);
-      document.body.style.overflow = open ? 'hidden' : '';
+  var navLinksSource = document.getElementById('nav-links');
+
+  if (toggle && navLinksSource) {
+    // Build a portal overlay directly on <body> — avoids nav's stacking context entirely
+    var overlay = document.createElement('ul');
+    overlay.id = 'mobile-nav-overlay';
+
+    // Close button inside overlay
+    var closeBtn = document.createElement('button');
+    closeBtn.className = 'overlay-close';
+    closeBtn.setAttribute('aria-label', 'Close menu');
+    closeBtn.innerHTML = '<span></span><span></span><span></span>';
+    overlay.appendChild(closeBtn);
+
+    // Clone nav links into overlay
+    var links = navLinksSource.querySelectorAll('a');
+    links.forEach(function(a) {
+      var li = document.createElement('li');
+      var clone = a.cloneNode(true);
+      li.appendChild(clone);
+      overlay.appendChild(li);
     });
-    // Close on link click
-    navLinks.querySelectorAll('a').forEach(function (a) {
-      a.addEventListener('click', function () {
-        navLinks.classList.remove('open');
-        toggle.classList.remove('open');
-        document.body.style.overflow = '';
-      });
+
+    document.body.appendChild(overlay);
+
+    function openMenu() {
+      overlay.classList.add('open');
+      toggle.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeMenu() {
+      overlay.classList.remove('open');
+      toggle.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    toggle.addEventListener('click', function() {
+      overlay.classList.contains('open') ? closeMenu() : openMenu();
+    });
+    closeBtn.addEventListener('click', closeMenu);
+
+    // Close on any link click
+    overlay.querySelectorAll('a').forEach(function(a) {
+      a.addEventListener('click', closeMenu);
     });
   }
 

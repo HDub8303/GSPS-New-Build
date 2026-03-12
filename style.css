@@ -450,7 +450,7 @@ footer {
   flex-direction: column; justify-content: center; gap: 5px;
   width: 40px; height: 40px; cursor: pointer;
   background: transparent; border: none; padding: 4px;
-  position: relative; z-index: 1; /* within nav stacking context normally */
+  position: relative; z-index: 1;
 }
 .nav-toggle span {
   display: block; width: 24px; height: 2px;
@@ -458,24 +458,43 @@ footer {
   transition: transform .3s, opacity .3s, width .3s;
   transform-origin: center;
 }
-.nav-toggle.open {
-  /* Escape nav's stacking context by going fixed, above the drawer */
-  position: fixed; top: 16px; right: 20px; z-index: 200;
-}
 .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 .nav-toggle.open span:nth-child(2) { opacity: 0; width: 0; }
 .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-/* Mobile nav drawer */
-.nav-links.open {
-  display: flex !important;
-  position: fixed; inset: 0;
+/* Mobile nav overlay — a portal div injected by JS directly on <body> */
+#mobile-nav-overlay {
+  display: none;
+  position: fixed; inset: 0; z-index: 9000;
   flex-direction: column; justify-content: center; align-items: center;
-  gap: 36px; background: rgba(12,8,20,0.97);
-  backdrop-filter: blur(16px); z-index: 150; /* beats nav z-index:50 at root level */
+  gap: 36px;
+  background: rgba(12,8,20,0.97);
+  backdrop-filter: blur(16px);
   animation: fadeIn .2s ease;
+  list-style: none;
 }
-.nav-links.open a { font-size: 20px; letter-spacing: .12em; }
+#mobile-nav-overlay.open { display: flex; }
+#mobile-nav-overlay a {
+  color: var(--muted); text-decoration: none;
+  font-family: 'DM Mono', monospace;
+  font-size: 20px; letter-spacing: .12em; text-transform: uppercase;
+  transition: color .25s;
+}
+#mobile-nav-overlay a:hover,
+#mobile-nav-overlay a.active { color: var(--c2); }
+/* Close button inside overlay */
+#mobile-nav-overlay .overlay-close {
+  position: absolute; top: 20px; right: 20px;
+  background: transparent; border: none; cursor: pointer;
+  display: flex; flex-direction: column; gap: 5px; padding: 4px;
+}
+#mobile-nav-overlay .overlay-close span {
+  display: block; width: 24px; height: 2px;
+  background: var(--text); border-radius: 2px;
+}
+#mobile-nav-overlay .overlay-close span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+#mobile-nav-overlay .overlay-close span:nth-child(2) { opacity: 0; }
+#mobile-nav-overlay .overlay-close span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
 /* ── RESPONSIVE — TABLET ── */
