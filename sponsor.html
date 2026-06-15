@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Sponsor a vertical banner at the Renaissance Center Wintergarden Lobby in Detroit, July 1–4, 2026. Premium brand exposure with full printing & placement handled by Global Summit Place Solutions.">
+<title>Sponsor a Banner — Renaissance Center Wintergarden Lobby | GSPS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Lora:ital@1&family=Inter:wght@400;500;600&display=swap">
+<style>
+/* ============================================================
+   GSPS THEME — recreated so this page is fully self-contained.
+   If your style.css already defines these, you can trim this
+   block; the class names match your existing pages.
+   ============================================================ */
+:root{
+  --bg:#0a0612;
+  --bg2:#120a20;
+  --panel:rgba(155,77,255,0.04);
+  --panel-bd:rgba(155,77,255,0.16);
+  --text:#f5f0ff;
+  --muted:rgba(245,240,255,0.66);
+  --faint:rgba(245,240,255,0.34);
+  --c1:#9b4dff;
+  --c2:#d46bff;
+  --c3:#6b8bff;
+  --gold:#e8b84b;
+  --gold2:#f6d784;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',system-ui,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+body::before{
+  content:'';position:fixed;inset:0;z-index:-2;pointer-events:none;
+  background:
+    radial-gradient(ellipse 60% 50% at 75% 0%, rgba(155,77,255,0.10), transparent 60%),
+    radial-gradient(ellipse 50% 50% at 10% 90%, rgba(107,139,255,0.08), transparent 60%),
+    linear-gradient(180deg,var(--bg) 0%, var(--bg2) 50%, var(--bg) 100%);
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+
+/* atmosphere */
+#particle-canvas{position:fixed;inset:0;z-index:-1;pointer-events:none}
+.grid-overlay{
+  position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.5;
+  background-image:
+    linear-gradient(rgba(155,77,255,0.05) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(155,77,255,0.05) 1px,transparent 1px);
+  background-size:64px 64px;
+  mask-image:radial-gradient(ellipse 80% 80% at 50% 30%,#000,transparent 75%);
+}
+.scanline{
+  position:fixed;left:0;right:0;height:140px;z-index:0;pointer-events:none;
+  background:linear-gradient(180deg,transparent,rgba(155,77,255,0.05),transparent);
+  animation:scan 9s linear infinite;
+}
+@keyframes scan{0%{transform:translateY(-160px)}100%{transform:translateY(100vh)}}
+
+/* custom cursor */
+#cursor,#cursor-ring{position:fixed;top:0;left:0;border-radius:50%;pointer-events:none;z-index:9999;mix-blend-mode:screen;transition:opacity .3s}
+#cursor{width:7px;height:7px;background:var(--c2);margin:-3.5px 0 0 -3.5px}
+#cursor-ring{width:34px;height:34px;border:1px solid rgba(212,107,255,0.5);margin:-17px 0 0 -17px;transition:transform .18s ease,opacity .3s}
+@media (hover:none),(pointer:coarse){#cursor,#cursor-ring{display:none}}
+
+.page{position:relative;z-index:1;max-width:1240px;margin:0 auto}
+
+/* ---- NAV ---- */
+nav{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:26px 64px;position:sticky;top:0;z-index:100;
+  background:rgba(10,6,18,0.6);backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(155,77,255,0.08);
+}
+.logo{display:flex;align-items:center;gap:11px;font-family:'Syne',sans-serif;font-weight:800;font-size:20px;letter-spacing:.04em}
+.logo-dot{width:11px;height:11px;border-radius:50%;background:linear-gradient(135deg,var(--c2),var(--c1));box-shadow:0 0 14px var(--c1)}
+.nav-links{display:flex;gap:34px;list-style:none}
+.nav-links a{font-size:13px;letter-spacing:.06em;color:var(--muted);text-transform:uppercase;font-weight:500;position:relative;transition:color .25s}
+.nav-links a:hover,.nav-links a.active{color:var(--text)}
+.nav-links a.active::after{content:'';position:absolute;left:0;right:0;bottom:-7px;height:2px;background:linear-gradient(90deg,var(--c2),var(--c1));border-radius:2px}
+.nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:6px}
+.nav-toggle span{width:24px;height:2px;background:var(--text);border-radius:2px;transition:.3s}
+
+/* ---- BUTTONS ---- */
+.btn{
+  position:relative;display:inline-flex;align-items:center;justify-content:center;
+  padding:16px 30px;font-family:'Inter',sans-serif;font-weight:600;font-size:12px;
+  letter-spacing:.14em;text-transform:uppercase;border-radius:60px;cursor:pointer;
+  overflow:hidden;border:1px solid transparent;transition:transform .25s ease,box-shadow .25s ease;
+}
+.btn span{position:relative;z-index:2}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:linear-gradient(100deg,var(--c1),var(--c2));color:#fff;box-shadow:0 8px 30px -8px rgba(155,77,255,0.7)}
+.btn-primary:hover{box-shadow:0 14px 40px -10px rgba(155,77,255,0.85)}
+.btn-secondary{border-color:rgba(155,77,255,0.4);color:var(--text);background:rgba(155,77,255,0.04)}
+.btn-secondary:hover{border-color:var(--c2);background:rgba(155,77,255,0.1)}
+.btn-ghost{padding:14px 24px;border-color:rgba(245,240,255,0.16);color:var(--muted);background:transparent;font-size:11px}
+.btn-ghost:hover{color:var(--text);border-color:rgba(245,240,255,0.4)}
+.btn-gold{background:linear-gradient(100deg,var(--gold),var(--gold2));color:#1a1205;box-shadow:0 8px 30px -8px rgba(232,184,75,0.55)}
+.btn-gold:hover{box-shadow:0 14px 40px -10px rgba(232,184,75,0.7)}
+
+/* ---- SHARED TEXT BLOCKS ---- */
+.page-eyebrow{
+  display:inline-flex;align-items:center;gap:12px;
+  font-size:12px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;
+  color:var(--c2);margin-bottom:26px;opacity:0;animation-duration:.8s;animation-fill-mode:forwards;
+}
+.page-eyebrow::before{content:'';width:34px;height:1px;background:linear-gradient(90deg,var(--c1),transparent)}
+.section{padding:120px 64px}
+.section-label{font-size:12px;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:var(--c2)}
+.section-title{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(30px,4vw,56px);line-height:1.02;letter-spacing:-.025em;margin-bottom:44px}
+
+/* ---- HERO ---- */
+.hero{
+  display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center;
+  padding:70px 64px 90px;position:relative;
+}
+.hero-copy h1{
+  font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(40px,5.4vw,84px);
+  line-height:.95;letter-spacing:-.03em;margin-bottom:0;
+}
+.hero-copy h1 .stroke{color:transparent;-webkit-text-stroke:1px rgba(155,77,255,0.65)}
+.hero-copy h1 .grad{
+  background:linear-gradient(90deg,var(--c2),var(--c1) 45%,var(--c3) 75%,var(--c2));
+  background-size:200% auto;-webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;animation:gradShift 5s linear infinite;
+}
+.hero-meta{display:flex;flex-wrap:wrap;gap:14px;margin:30px 0 8px}
+.meta-chip{
+  display:inline-flex;align-items:center;gap:9px;padding:9px 16px;border-radius:50px;
+  font-size:12.5px;letter-spacing:.04em;color:var(--text);
+  border:1px solid var(--panel-bd);background:var(--panel);
+}
+.meta-chip.gold{border-color:rgba(232,184,75,0.45);background:rgba(232,184,75,0.07);color:var(--gold2)}
+.meta-chip svg{width:15px;height:15px;flex:none}
+.hero-lede{
+  font-family:'Lora',serif;font-style:italic;font-size:18px;line-height:1.75;
+  color:var(--muted);max-width:480px;margin:26px 0 40px;
+}
+.hero-btns{display:flex;gap:16px;flex-wrap:wrap}
+
+/* ---- BANNER SHOWCASE (signature element) ---- */
+.banner-stage{position:relative;display:flex;justify-content:center;perspective:1600px}
+.banner-stage::before{
+  content:'';position:absolute;inset:-6% -12%;z-index:0;pointer-events:none;
+  background:radial-gradient(ellipse 50% 60% at 50% 42%,rgba(232,184,75,0.22),rgba(155,77,255,0.12) 45%,transparent 72%);
+  filter:blur(8px);
+}
+.banner-frame{
+  position:relative;z-index:1;border-radius:18px;overflow:hidden;
+  border:1px solid rgba(232,184,75,0.35);
+  box-shadow:0 40px 90px -30px rgba(0,0,0,0.9),0 0 0 1px rgba(155,77,255,0.12),inset 0 0 0 1px rgba(255,255,255,0.04);
+  transform:rotateY(-6deg) rotateX(1.5deg);
+  transition:transform .6s cubic-bezier(.2,.7,.2,1),box-shadow .6s;
+  will-change:transform;
+}
+.banner-frame:hover{transform:rotateY(0deg) rotateX(0deg) translateY(-6px);box-shadow:0 50px 110px -28px rgba(0,0,0,0.92),0 0 60px -10px rgba(232,184,75,0.25)}
+.banner-frame img{width:100%;height:auto}
+.banner-frame::after{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(115deg,rgba(255,255,255,0.16) 0%,transparent 28%);
+  mix-blend-mode:screen;
+}
+.banner-tag{
+  position:absolute;z-index:2;top:18px;left:-10px;
+  font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#1a1205;
+  padding:8px 16px;border-radius:6px;background:linear-gradient(100deg,var(--gold),var(--gold2));
+  box-shadow:0 10px 24px -8px rgba(232,184,75,0.6);
+}
+
+/* ---- STATS ---- */
+.stats-row{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:0;
+  margin:0 64px;border:1px solid var(--panel-bd);border-radius:18px;
+  background:linear-gradient(180deg,rgba(155,77,255,0.05),transparent);overflow:hidden;
+}
+.stat-item{padding:38px 28px;border-right:1px solid rgba(155,77,255,0.1)}
+.stat-item:last-child{border-right:0}
+.stat-num{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(28px,3.4vw,44px);line-height:1;letter-spacing:-.02em;background:linear-gradient(120deg,var(--text),var(--c2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:12px}
+.stat-label{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+
+/* ---- WHY ---- */
+.why{
+  display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:start;
+  padding:42px;border:1px solid var(--panel-bd);border-radius:20px;
+  background:linear-gradient(120deg,rgba(155,77,255,0.06),rgba(107,139,255,0.03));
+}
+.why-badge{
+  width:62px;height:62px;flex:none;border-radius:16px;display:grid;place-items:center;
+  border:1px solid rgba(232,184,75,0.4);background:rgba(232,184,75,0.08);color:var(--gold2);
+}
+.why-badge svg{width:28px;height:28px}
+.why h3{font-family:'Syne',sans-serif;font-weight:700;font-size:24px;margin-bottom:10px}
+.why p{color:var(--muted);max-width:760px}
+
+/* ---- TIERS ---- */
+.tier-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.tier{
+  position:relative;padding:38px 32px 34px;border-radius:20px;
+  border:1px solid var(--panel-bd);background:linear-gradient(180deg,rgba(155,77,255,0.05),rgba(10,6,18,0.2));
+  transition:transform .35s ease,border-color .35s ease,box-shadow .35s ease;
+  display:flex;flex-direction:column;
+}
+.tier:hover{transform:translateY(-6px);border-color:rgba(232,184,75,0.4);box-shadow:0 30px 60px -30px rgba(0,0,0,0.8)}
+.tier.featured{border-color:rgba(232,184,75,0.55);background:linear-gradient(180deg,rgba(232,184,75,0.09),rgba(155,77,255,0.05))}
+.tier-badge{
+  position:absolute;top:-12px;left:32px;font-size:10.5px;font-weight:600;letter-spacing:.18em;
+  text-transform:uppercase;color:#1a1205;padding:6px 14px;border-radius:50px;
+  background:linear-gradient(100deg,var(--gold),var(--gold2));box-shadow:0 8px 20px -6px rgba(232,184,75,0.6);
+}
+.tier-name{font-size:13px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.tier-spec{font-family:'Lora',serif;font-style:italic;font-size:14px;color:var(--faint);margin-bottom:16px}
+.tier.featured .tier-spec{color:rgba(246,215,132,0.7)}
+.tier.featured .tier-name{color:var(--gold2)}
+.tier-price{font-family:'Syne',sans-serif;font-weight:800;font-size:60px;line-height:1;letter-spacing:-.03em;color:var(--gold);display:flex;align-items:flex-start;gap:4px}
+.tier-price .cur{font-size:26px;margin-top:8px;color:var(--gold2)}
+.tier-desc{color:var(--muted);font-size:15px;margin:18px 0 26px;flex:1}
+.tier .btn{width:100%}
+
+/* ---- INCLUDED ---- */
+.incl-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:14px}
+.incl{display:flex;gap:18px;padding:30px;border:1px solid var(--panel-bd);border-radius:18px;background:var(--panel)}
+.incl-ic{width:46px;height:46px;flex:none;border-radius:12px;display:grid;place-items:center;border:1px solid rgba(155,77,255,0.3);background:rgba(155,77,255,0.08);color:var(--c2)}
+.incl-ic svg{width:22px;height:22px}
+.incl h4{font-family:'Syne',sans-serif;font-weight:700;font-size:18px;margin-bottom:6px}
+.incl p{color:var(--muted);font-size:14.5px}
+
+/* ---- CTA ---- */
+.cta-strip{
+  margin:0 64px;padding:74px 56px;text-align:center;border-radius:28px;
+  border:1px solid var(--panel-bd);position:relative;overflow:hidden;
+  background:linear-gradient(135deg,rgba(155,77,255,0.12),rgba(107,139,255,0.06));
+}
+.cta-strip::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 50% 70% at 50% 0%,rgba(232,184,75,0.12),transparent 60%);pointer-events:none}
+.cta-strip h2{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(30px,4.4vw,56px);line-height:1.02;letter-spacing:-.025em;margin-bottom:18px;position:relative}
+.cta-strip h2 span{background:linear-gradient(90deg,var(--gold),var(--gold2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.cta-strip p{color:var(--muted);max-width:520px;margin:0 auto 36px;position:relative}
+.btn-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;position:relative}
+
+/* ---- FOOTER ---- */
+footer{
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;
+  padding:40px 64px;margin-top:30px;border-top:1px solid rgba(155,77,255,0.1);
+}
+.footer-brand{font-family:'Syne',sans-serif;font-weight:700;font-size:18px}
+footer span{font-size:13px;color:var(--faint)}
+.footer-strip{
+  text-align:center;padding:16px;font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--gold2);border-top:1px solid rgba(232,184,75,0.18);background:rgba(232,184,75,0.03);
+}
+.footer-strip .dot{color:var(--gold);margin:0 14px}
+
+/* ---- ANIMATION / REVEAL ---- */
+@keyframes fadeUp{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+@keyframes gradShift{to{background-position:200% center}}
+.reveal{opacity:0;transform:translateY(34px);transition:opacity .8s ease,transform .8s ease}
+.reveal.in{opacity:1;transform:none}
+.anim{opacity:0;animation:fadeUp .8s forwards}
+.d1{animation-delay:.1s}.d2{animation-delay:.25s}.d3{animation-delay:.4s}.d4{animation-delay:.55s}.d5{animation-delay:.7s}
+
+/* ---- REGISTRATION FORM ---- */
+.reg-form{max-width:880px}
+.reg-block{margin-bottom:42px}
+.reg-legend{
+  font-family:'Syne',sans-serif;font-weight:700;font-size:19px;letter-spacing:-.01em;
+  color:var(--text);margin-bottom:20px;display:flex;align-items:center;gap:13px;
+}
+.reg-legend .n{
+  width:30px;height:30px;border-radius:9px;display:inline-grid;place-items:center;flex:none;
+  font-family:'Inter',sans-serif;font-size:13px;font-weight:600;color:var(--gold2);
+  border:1px solid rgba(232,184,75,0.4);background:rgba(232,184,75,0.08);
+}
+.tier-select{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.tier-opt{cursor:pointer;display:block;position:relative}
+.tier-opt input{position:absolute;inset:0;opacity:0;cursor:pointer}
+.tier-opt-card{
+  border:1px solid var(--panel-bd);border-radius:16px;padding:24px 22px;background:var(--panel);height:100%;
+  transition:border-color .25s,background .25s,transform .25s,box-shadow .25s;
+}
+.tier-opt:hover .tier-opt-card{transform:translateY(-3px);border-color:rgba(232,184,75,0.4)}
+.tier-opt input:checked + .tier-opt-card{
+  border-color:var(--gold);background:rgba(232,184,75,0.1);
+  box-shadow:0 0 0 1px var(--gold),0 18px 44px -24px rgba(232,184,75,0.7);
+}
+.tier-opt input:focus-visible + .tier-opt-card{box-shadow:0 0 0 3px rgba(155,77,255,0.4)}
+.to-name{font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.tier-opt input:checked + .tier-opt-card .to-name{color:var(--gold2)}
+.to-dim{font-family:'Lora',serif;font-style:italic;color:var(--muted);font-size:14px;margin:7px 0 16px}
+.to-price{font-family:'Syne',sans-serif;font-weight:800;font-size:36px;color:var(--gold);line-height:1}
+.field-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.field{display:flex;flex-direction:column;gap:8px}
+.field.span2{grid-column:1 / -1}
+.field label{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:500}
+.field input,.field textarea{
+  font-family:'Inter',sans-serif;font-size:15px;color:var(--text);width:100%;
+  background:rgba(255,255,255,0.025);border:1px solid var(--panel-bd);border-radius:12px;
+  padding:14px 16px;outline:none;transition:border-color .2s,box-shadow .2s;
+}
+.field textarea{resize:vertical;min-height:110px}
+.field input::placeholder,.field textarea::placeholder{color:var(--faint)}
+.field input:focus,.field textarea:focus{border-color:var(--c2);box-shadow:0 0 0 3px rgba(155,77,255,0.18)}
+.field.invalid input,.field.invalid textarea{border-color:#ff6b8a;box-shadow:0 0 0 3px rgba(255,107,138,0.15)}
+.upload{
+  position:relative;border:1.5px dashed rgba(232,184,75,0.4);border-radius:18px;
+  padding:42px 24px;text-align:center;cursor:pointer;background:rgba(232,184,75,0.025);
+  transition:border-color .25s,background .25s;outline:none;
+}
+.upload:hover,.upload.drag,.upload:focus-visible{border-color:var(--gold);background:rgba(232,184,75,0.07)}
+.up-ic{width:42px;height:42px;margin:0 auto 14px;color:var(--gold2)}
+.up-main{font-weight:600;color:var(--text)}
+.up-main span{color:var(--gold2);text-decoration:underline;text-underline-offset:3px}
+.up-sub{font-size:13px;color:var(--faint);margin-top:8px}
+.up-file{
+  margin-top:18px;display:inline-flex;align-items:center;gap:14px;
+  padding:10px 10px 10px 16px;border-radius:50px;border:1px solid rgba(155,77,255,0.3);
+  background:rgba(155,77,255,0.1);font-size:13.5px;color:var(--text);
+}
+.up-file .rm{cursor:pointer;color:var(--faint);font-weight:600;border:0;background:none;font-size:18px;line-height:1;padding:0 6px}
+.up-file .rm:hover{color:#ff6b8a}
+.reg-submit{display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-top:6px}
+#submit-btn[disabled]{opacity:.6;cursor:not-allowed;transform:none}
+.form-status{font-size:14.5px;line-height:1.5;padding:14px 18px;border-radius:12px;flex:1 1 280px}
+.form-status.ok{color:#7ef0c0;border:1px solid rgba(126,240,192,0.35);background:rgba(126,240,192,0.07)}
+.form-status.err{color:#ff97aa;border:1px solid rgba(255,107,138,0.35);background:rgba(255,107,138,0.07)}
+.form-status.info{color:var(--gold2);border:1px solid rgba(232,184,75,0.35);background:rgba(232,184,75,0.06)}
+@media (max-width:760px){
+  .tier-select{grid-template-columns:1fr}
+  .field-grid{grid-template-columns:1fr}
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width:980px){
+  .hero{grid-template-columns:1fr;gap:44px;padding:50px 36px 70px}
+  .banner-frame{transform:none;max-width:420px;margin:0 auto}
+  .banner-frame:hover{transform:translateY(-6px)}
+  .stats-row{grid-template-columns:1fr 1fr;margin:0 36px}
+  .stat-item:nth-child(2){border-right:0}
+  .stat-item:nth-child(1),.stat-item:nth-child(2){border-bottom:1px solid rgba(155,77,255,0.1)}
+  .section{padding:84px 36px}
+  .tier-grid{grid-template-columns:1fr;max-width:440px;margin:0 auto}
+  .incl-grid{grid-template-columns:1fr}
+  .cta-strip,.stats-row{margin:0 36px}
+}
+@media (max-width:760px){
+  nav{padding:20px 24px}
+  .nav-links{
+    position:fixed;inset:64px 0 auto 0;flex-direction:column;gap:0;
+    background:rgba(10,6,18,0.97);backdrop-filter:blur(20px);
+    padding:10px 24px 24px;border-bottom:1px solid rgba(155,77,255,0.12);
+    transform:translateY(-130%);transition:transform .35s ease;
+  }
+  .nav-links.open{transform:translateY(0)}
+  .nav-links li{padding:14px 0;border-bottom:1px solid rgba(155,77,255,0.07)}
+  .nav-toggle{display:flex}
+  .hero,.section,.stats-row,.cta-strip,.why,footer{padding-left:24px;padding-right:24px}
+  .stats-row,.cta-strip{margin:0 24px}
+  .why{grid-template-columns:1fr;padding:30px}
+  .cta-strip{padding:56px 28px}
+  footer{flex-direction:column;align-items:flex-start}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;scroll-behavior:auto!important}
+  .reveal{opacity:1;transform:none}
+  .scanline{display:none}
+}
+</style>
+</head>
+<body>
+
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+<canvas id="particle-canvas"></canvas>
+<div class="grid-overlay"></div>
+<div class="scanline"></div>
+
+<div class="page">
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="logo">
+      <div class="logo-dot"></div>
+      GSPS
+    </a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="experiences.html">Experiences</a></li>
+      <li><a href="solution.html">Solution</a></li>
+      <li><a href="sponsor.html" class="active">Sponsor</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-copy">
+      <div class="page-eyebrow anim d1">Advertising Opportunity</div>
+      <h1 class="anim d2">
+        <span style="display:block">Your Brand,</span>
+        <span class="stroke" style="display:block">Front &amp;</span>
+        <span class="grad" style="display:block">Center.</span>
+      </h1>
+
+      <div class="hero-meta anim d3">
+        <span class="meta-chip gold">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+          July 1–4, 2026
+        </span>
+        <span class="meta-chip">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 12-9 12S3 17 3 10a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          Renaissance Center · Detroit, MI
+        </span>
+      </div>
+
+      <p class="hero-lede anim d3">
+        Hang a vertical banner in the Wintergarden Lobby — one of Detroit's most
+        iconic high-traffic venues — and put your brand in front of thousands over
+        Independence Day weekend.
+      </p>
+
+      <div class="hero-btns anim d4">
+        <a href="#tiers" class="btn btn-gold"><span>View Sponsorship Tiers</span></a>
+        <a href="#register" class="btn btn-secondary"><span>Register Now</span></a>
+      </div>
+    </div>
+
+    <!-- SIGNATURE: the flyer as a hanging lobby banner -->
+    <div class="banner-stage anim d3">
+      <div class="banner-frame">
+        <span class="banner-tag">Limited Availability</span>
+        <img src="images/sponsor-banner.png" alt="Vertical Banner Display advertising opportunity at the Renaissance Center Wintergarden Lobby, Detroit — July 1–4, 2026. Platinum $1000, Gold $750, Silver $500 sponsorship tiers.">
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats-row reveal">
+    <div class="stat-item">
+      <div class="stat-num">4 Days</div>
+      <div class="stat-label">Of Holiday Foot Traffic</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">1000s</div>
+      <div class="stat-label">Of Expected Visitors</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">Iconic</div>
+      <div class="stat-label">Wintergarden Lobby</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">3 Tiers</div>
+      <div class="stat-label">To Fit Any Budget</div>
+    </div>
+  </div>
+
+  <!-- WHY -->
+  <section class="section" style="padding-bottom:40px">
+    <div class="why reveal">
+      <div class="why-badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2 4 5v6c0 5 3.4 8.5 8 11 4.6-2.5 8-6 8-11V5l-8-3Z"/></svg>
+      </div>
+      <div>
+        <h3>Why the Wintergarden Lobby?</h3>
+        <p>
+          One of Detroit's most iconic high-traffic venues, the Renaissance Center
+          Wintergarden draws thousands of visitors across the Independence Day
+          holiday weekend. A vertical banner here puts your brand exactly where
+          connections are made — maximum exposure, premium placement, real impact.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIERS -->
+  <section class="section" id="tiers" style="padding-top:50px">
+    <div style="display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-bottom:46px">
+      <div class="section-label">Sponsorship Tiers</div>
+      <div class="section-title" style="margin-bottom:0">Choose Your Placement</div>
+    </div>
+
+    <div class="tier-grid">
+      <div class="tier featured reveal">
+        <span class="tier-badge">Best Value</span>
+        <div class="tier-name">Platinum</div>
+        <div class="tier-spec">Retractable · 36&quot; × 84&quot;</div>
+        <div class="tier-price"><span class="cur">$</span>1000</div>
+        <div class="tier-desc">Our largest 36-inch retractable banner with platinum placement at Andiamo's main entrance — the highest-visibility spot in the lobby.</div>
+        <a href="#register" class="btn btn-gold reserve-btn" data-price="1000"><span>Reserve Platinum</span></a>
+      </div>
+
+      <div class="tier reveal">
+        <div class="tier-name">Gold</div>
+        <div class="tier-spec">Retractable · 24&quot; × 84&quot;</div>
+        <div class="tier-price"><span class="cur">$</span>750</div>
+        <div class="tier-desc">A full-height 24-inch retractable banner with gold placement near Andiamo's main entrance and steady foot traffic.</div>
+        <a href="#register" class="btn btn-secondary reserve-btn" data-price="750"><span>Reserve Gold</span></a>
+      </div>
+
+      <div class="tier reveal">
+        <div class="tier-name">Silver</div>
+        <div class="tier-spec">X-Stand · 24&quot; × 60&quot;</div>
+        <div class="tier-price"><span class="cur">$</span>500</div>
+        <div class="tier-desc">A 24-inch X-stand banner with general lobby exposure — a smart, affordable way to get your brand in front of the crowd.</div>
+        <a href="#register" class="btn btn-secondary reserve-btn" data-price="500"><span>Reserve Silver</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT'S INCLUDED -->
+  <section class="section" style="padding-top:30px">
+    <div class="section-label">How It Works</div>
+    <div class="section-title">We Handle The Rest</div>
+
+    <div class="incl-grid">
+      <div class="incl reveal">
+        <div class="incl-ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+        </div>
+        <div>
+          <h4>Printing Included</h4>
+          <p>Your tier price covers full banner printing and on-site placement — handled start to finish by our team.</p>
+        </div>
+      </div>
+
+      <div class="incl reveal">
+        <div class="incl-ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7v10a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7M3 7l9 6 9-6M3 7l9-4 9 4"/></svg>
+        </div>
+        <div>
+          <h4>Bring Your Own Banner</h4>
+          <p>Already have a pre-printed vertical banner? Placement rates apply — simply send it over and we mount it for you.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-strip reveal">
+    <h2>Reserve Your <span>Banner Spot</span><br>Before It's Gone</h2>
+    <p>Space is limited and selling fast for July 1–4. Lock in your placement today and we'll take it from there.</p>
+    <div class="btn-row">
+      <a href="#register" class="btn btn-gold"><span>Reserve Your Spot</span></a>
+      <a href="contact.html" class="btn btn-secondary"><span>Ask a Question</span></a>
+    </div>
+  </div>
+
+  <!-- REGISTRATION -->
+  <section class="section" id="register" style="padding-top:90px">
+    <div class="section-label">Reserve</div>
+    <div class="section-title">Register Your Banner</div>
+
+    <form id="reg-form" class="reg-form" novalidate>
+
+      <!-- 1 · choose tier -->
+      <div class="reg-block">
+        <div class="reg-legend"><span class="n">1</span>Choose your banner</div>
+        <div class="tier-select">
+          <label class="tier-opt">
+            <input type="radio" name="tier" value="X-Stand 24x60" data-price="500" data-label="X-Stand · 24×60 · $500">
+            <div class="tier-opt-card">
+              <div class="to-name">X-Stand</div>
+              <div class="to-dim">24&quot; × 60&quot;</div>
+              <div class="to-price">$500</div>
+            </div>
+          </label>
+          <label class="tier-opt">
+            <input type="radio" name="tier" value="Retractable 24x84" data-price="750" data-label="Retractable · 24×84 · $750">
+            <div class="tier-opt-card">
+              <div class="to-name">Retractable</div>
+              <div class="to-dim">24&quot; × 84&quot;</div>
+              <div class="to-price">$750</div>
+            </div>
+          </label>
+          <label class="tier-opt">
+            <input type="radio" name="tier" value="Retractable 36x84" data-price="1000" data-label="Retractable · 36×84 · $1000">
+            <div class="tier-opt-card">
+              <div class="to-name">Retractable</div>
+              <div class="to-dim">36&quot; × 84&quot;</div>
+              <div class="to-price">$1000</div>
+            </div>
+          </label>
+        </div>
+      </div>
+
+      <!-- 2 · details -->
+      <div class="reg-block">
+        <div class="reg-legend"><span class="n">2</span>Your details</div>
+        <div class="field-grid">
+          <div class="field"><label>Full name *</label><input name="name" required autocomplete="name"></div>
+          <div class="field"><label>Company / brand *</label><input name="company" required autocomplete="organization"></div>
+          <div class="field"><label>Email *</label><input type="email" name="email" required autocomplete="email"></div>
+          <div class="field"><label>Phone</label><input name="phone" autocomplete="tel"></div>
+          <div class="field span2"><label>Website</label><input name="website" placeholder="https://"></div>
+          <div class="field span2"><label>Notes / special requests</label><textarea name="notes" placeholder="Anything we should know about your artwork or placement?"></textarea></div>
+        </div>
+      </div>
+
+      <!-- 3 · upload -->
+      <div class="reg-block">
+        <div class="reg-legend"><span class="n">3</span>Upload your banner artwork</div>
+        <div class="upload" id="drop" tabindex="0" role="button" aria-label="Upload banner artwork">
+          <input type="file" id="file" accept=".pdf,.png,.jpg,.jpeg,.tif,.tiff,.ai,.eps,image/*,application/pdf" hidden>
+          <svg class="up-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 16V4m0 0L7 9m5-5 5 5"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+          <div class="up-main">Drag &amp; drop your file, or <span>browse</span></div>
+          <div class="up-sub">PDF, PNG, JPG, TIFF, AI or EPS · up to 25 MB · optional — you can also send artwork later</div>
+          <div class="up-file" id="up-file" hidden></div>
+        </div>
+      </div>
+
+      <div class="reg-submit">
+        <button type="submit" class="btn btn-gold" id="submit-btn"><span>Submit Registration</span></button>
+        <div class="form-status" id="status" hidden></div>
+      </div>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <a href="index.html" class="footer-brand">Global Summit Place Solutions</a>
+    <span>© 2026 GSPS. All rights reserved.</span>
+    <span>globalsolutionssp.com</span>
+  </footer>
+</div>
+
+<div class="footer-strip">
+  Space Is Limited <span class="dot">◆</span> Reserve Your Banner Spot Today <span class="dot">◆</span> July 1–4, 2026
+</div>
+
+<script>
+/* nav toggle */
+const tog=document.getElementById('nav-toggle'),links=document.getElementById('nav-links');
+tog&&tog.addEventListener('click',()=>links.classList.toggle('open'));
+links&&links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
+
+/* scroll reveal */
+const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.16});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+/* custom cursor */
+const cur=document.getElementById('cursor'),ring=document.getElementById('cursor-ring');
+if(window.matchMedia('(hover:hover)').matches){
+  let rx=0,ry=0,x=0,y=0;
+  window.addEventListener('mousemove',e=>{x=e.clientX;y=e.clientY;cur.style.transform=`translate(${x}px,${y}px)`});
+  (function loop(){rx+=(x-rx)*.16;ry+=(y-ry)*.16;ring.style.transform=`translate(${rx}px,${ry}px)`;requestAnimationFrame(loop)})();
+  document.querySelectorAll('a,button').forEach(el=>{
+    el.addEventListener('mouseenter',()=>ring.style.transform+=' scale(1.5)');
+    el.addEventListener('mouseleave',()=>{});
+  });
+}
+
+/* ambient particles */
+(function(){
+  const c=document.getElementById('particle-canvas');if(!c)return;
+  if(window.matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+  const ctx=c.getContext('2d');let w,h,ps=[];
+  function size(){w=c.width=innerWidth;h=c.height=innerHeight}
+  function init(){ps=[];const n=Math.min(60,Math.floor(w/26));for(let i=0;i<n;i++)ps.push({x:Math.random()*w,y:Math.random()*h,r:Math.random()*1.6+.4,vx:(Math.random()-.5)*.25,vy:(Math.random()-.5)*.25,a:Math.random()*.5+.1})}
+  function draw(){ctx.clearRect(0,0,w,h);ps.forEach(p=>{p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>w)p.vx*=-1;if(p.y<0||p.y>h)p.vy*=-1;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,7);ctx.fillStyle=`rgba(200,150,255,${p.a})`;ctx.fill()});requestAnimationFrame(draw)}
+  size();init();draw();addEventListener('resize',()=>{size();init()});
+})();
+/* ---- REGISTRATION FORM ----
+   Paste your deployed Google Apps Script web-app URL below.
+   (See code.gs for the script + setup steps.) */
+const REGISTRATION_ENDPOINT = "https://script.google.com/macros/s/AKfycbwtSo72zcVv2vckW_tryqvDNZfBgf_tdtPfpUTy8ywbIEWN-Zm9c-NR3bf4FbAILZO3/exec";
+const MAX_MB = 25;
+
+(function(){
+  const form=document.getElementById('reg-form'); if(!form) return;
+  const fileInput=document.getElementById('file');
+  const drop=document.getElementById('drop');
+  const upFile=document.getElementById('up-file');
+  const statusEl=document.getElementById('status');
+  const submitBtn=document.getElementById('submit-btn');
+  let picked=null;
+
+  /* pre-select a tier when a "Reserve" card button is clicked */
+  document.querySelectorAll('.reserve-btn').forEach(b=>{
+    b.addEventListener('click',()=>{
+      const p=b.getAttribute('data-price');
+      const r=form.querySelector('input[name="tier"][data-price="'+p+'"]');
+      if(r) r.checked=true;
+    });
+  });
+
+  /* file picking + drag/drop */
+  drop.addEventListener('click',()=>fileInput.click());
+  drop.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();fileInput.click();}});
+  ['dragover','dragenter'].forEach(ev=>drop.addEventListener(ev,e=>{e.preventDefault();drop.classList.add('drag');}));
+  ['dragleave','dragend'].forEach(ev=>drop.addEventListener(ev,e=>{e.preventDefault();drop.classList.remove('drag');}));
+  drop.addEventListener('drop',e=>{e.preventDefault();drop.classList.remove('drag');if(e.dataTransfer.files[0])setFile(e.dataTransfer.files[0]);});
+  fileInput.addEventListener('change',()=>{if(fileInput.files[0])setFile(fileInput.files[0]);});
+
+  function setFile(f){
+    if(f.size > MAX_MB*1024*1024){ showStatus('err','That file is '+(f.size/1048576).toFixed(1)+' MB — please keep it under '+MAX_MB+' MB.'); return; }
+    picked=f; upFile.hidden=false;
+    upFile.innerHTML='<span>'+escapeHtml(f.name)+' · '+(f.size/1048576).toFixed(1)+' MB</span><button type="button" class="rm" aria-label="Remove file">×</button>';
+    upFile.querySelector('.rm').addEventListener('click',e=>{e.stopPropagation();picked=null;fileInput.value='';upFile.hidden=true;});
+  }
+
+  form.addEventListener('submit',async e=>{
+    e.preventDefault(); clearInvalid();
+    const tier=form.querySelector('input[name="tier"]:checked');
+    let ok=true;
+    ['name','company','email'].forEach(n=>{
+      const el=form.elements[n];
+      if(!el.value.trim()){ el.closest('.field').classList.add('invalid'); ok=false; }
+    });
+    const email=form.elements['email'];
+    if(email.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)){ email.closest('.field').classList.add('invalid'); ok=false; }
+    if(!tier){ showStatus('err','Please choose a banner above.'); return; }
+    if(!ok){ showStatus('err','Please complete the highlighted fields.'); return; }
+
+    if(REGISTRATION_ENDPOINT.indexOf('PASTE_YOUR')===0){
+      showStatus('info','The form is ready — connect your Google Drive folder by pasting your Apps Script URL into sponsor.html (see code.gs for the 2-minute setup).');
+      return;
+    }
+
+    submitBtn.disabled=true; submitBtn.querySelector('span').textContent='Submitting…';
+    showStatus('info','Uploading your registration…');
+    try{
+      const payload={
+        tier:tier.getAttribute('data-label'), price:tier.getAttribute('data-price'),
+        name:val('name'), company:val('company'), email:val('email'),
+        phone:val('phone'), website:val('website'), notes:val('notes'),
+        submittedAt:new Date().toISOString(), fileName:'', fileType:'', fileBase64:''
+      };
+      if(picked){ payload.fileBase64=await toBase64(picked); payload.fileName=picked.name; payload.fileType=picked.type||'application/octet-stream'; }
+      const res=await fetch(REGISTRATION_ENDPOINT,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(payload)});
+      let out={}; try{ out=await res.json(); }catch(_){}
+      if(out.ok===false) throw new Error(out.error||'failed');
+      form.reset(); picked=null; upFile.hidden=true;
+      showStatus('ok','Thanks! Your banner registration is in — we\u2019ll confirm your spot by email shortly.');
+    }catch(err){
+      showStatus('err','Something went wrong sending your registration. Please try again, or reach us through the Contact page.');
+    }finally{
+      submitBtn.disabled=false; submitBtn.querySelector('span').textContent='Submit Registration';
+    }
+  });
+
+  function val(n){return form.elements[n].value.trim();}
+  function toBase64(file){return new Promise((res,rej)=>{const r=new FileReader();r.onload=()=>res(String(r.result).split(',')[1]||'');r.onerror=rej;r.readAsDataURL(file);});}
+  function showStatus(t,m){statusEl.hidden=false;statusEl.className='form-status '+t;statusEl.textContent=m;statusEl.scrollIntoView({behavior:'smooth',block:'nearest'});}
+  function clearInvalid(){form.querySelectorAll('.field.invalid').forEach(f=>f.classList.remove('invalid'));}
+  function escapeHtml(s){return s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+})();
+</script>
+</body>
+</html>
