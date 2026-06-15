@@ -325,6 +325,14 @@ footer span{font-size:13px;color:var(--faint)}
 }
 .up-file .rm{cursor:pointer;color:var(--faint);font-weight:600;border:0;background:none;font-size:18px;line-height:1;padding:0 6px}
 .up-file .rm:hover{color:#ff6b8a}
+.tpl-block{margin-top:18px}
+.tpl-head{font-size:13px;color:var(--muted);margin-bottom:12px}
+.tpl-links{display:flex;flex-wrap:wrap;gap:12px}
+.tpl-link{display:inline-flex;align-items:center;gap:9px;padding:11px 16px;border-radius:50px;font-size:13px;color:var(--text);border:1px solid rgba(232,184,75,0.35);background:rgba(232,184,75,0.05);transition:border-color .2s,background .2s,transform .2s}
+.tpl-link:hover{border-color:var(--gold);background:rgba(232,184,75,0.1);transform:translateY(-2px)}
+.tpl-link svg{width:15px;height:15px;color:var(--gold2);flex:none}
+.tpl-mini{display:inline-block;margin-top:14px;font-size:12px;letter-spacing:.03em;color:var(--muted);border-bottom:1px solid rgba(245,240,255,0.2);transition:color .2s,border-color .2s}
+.tpl-mini:hover{color:var(--gold2);border-color:var(--gold)}
 .reg-submit{display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-top:6px}
 #submit-btn[disabled]{opacity:.6;cursor:not-allowed;transform:none}
 .form-status{font-size:14.5px;line-height:1.5;padding:14px 18px;border-radius:12px;flex:1 1 280px}
@@ -497,6 +505,7 @@ footer span{font-size:13px;color:var(--faint)}
         <div class="tier-price"><span class="cur">$</span>1000</div>
         <div class="tier-desc">Our largest 36-inch retractable banner with platinum placement at Andiamo's main entrance — the highest-visibility spot in the lobby.</div>
         <a href="#register" class="btn btn-gold reserve-btn" data-price="1000"><span>Reserve Platinum</span></a>
+        <a class="tpl-mini" href="templates/retractable-36x84.pdf" download>Download print template ↓</a>
       </div>
 
       <div class="tier reveal">
@@ -505,6 +514,7 @@ footer span{font-size:13px;color:var(--faint)}
         <div class="tier-price"><span class="cur">$</span>750</div>
         <div class="tier-desc">A full-height 24-inch retractable banner with gold placement near Andiamo's main entrance and steady foot traffic.</div>
         <a href="#register" class="btn btn-secondary reserve-btn" data-price="750"><span>Reserve Gold</span></a>
+        <a class="tpl-mini" href="templates/retractable-24x84.pdf" download>Download print template ↓</a>
       </div>
 
       <div class="tier reveal">
@@ -513,6 +523,7 @@ footer span{font-size:13px;color:var(--faint)}
         <div class="tier-price"><span class="cur">$</span>500</div>
         <div class="tier-desc">A 24-inch X-stand banner with general lobby exposure — a smart, affordable way to get your brand in front of the crowd.</div>
         <a href="#register" class="btn btn-secondary reserve-btn" data-price="500"><span>Reserve Silver</span></a>
+        <a class="tpl-mini" href="templates/x-stand-24x60.pdf" download>Download print template ↓</a>
       </div>
     </div>
   </section>
@@ -615,6 +626,23 @@ footer span{font-size:13px;color:var(--faint)}
           <div class="up-main">Drag &amp; drop your file, or <span>browse</span></div>
           <div class="up-sub">PDF, PNG, JPG, TIFF, AI or EPS · up to 25 MB · optional — you can also send artwork later</div>
           <div class="up-file" id="up-file" hidden></div>
+        </div>
+        <div class="tpl-block">
+          <div class="tpl-head">Designing your own? Download the print template for your size — each includes bleed, cut &amp; safe-area guides:</div>
+          <div class="tpl-links">
+            <a class="tpl-link" href="templates/x-stand-24x60.pdf" download>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 4v12m0 0 5-5m-5 5-5-5"/><path d="M4 18v1a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-1"/></svg>
+              X-Stand · 24&quot; × 60&quot;
+            </a>
+            <a class="tpl-link" href="templates/retractable-24x84.pdf" download>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 4v12m0 0 5-5m-5 5-5-5"/><path d="M4 18v1a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-1"/></svg>
+              Retractable · 24&quot; × 84&quot;
+            </a>
+            <a class="tpl-link" href="templates/retractable-36x84.pdf" download>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 4v12m0 0 5-5m-5 5-5-5"/><path d="M4 18v1a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-1"/></svg>
+              Retractable · 36&quot; × 84&quot;
+            </a>
+          </div>
         </div>
       </div>
 
